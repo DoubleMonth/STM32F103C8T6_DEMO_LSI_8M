@@ -332,7 +332,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Ctrl</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Ctrl;..\HardWare</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -499,6 +499,26 @@
               <FileName>hal_dev_ctrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Ctrl\hal_dev_ctrl.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>HardWare</GroupName>
+          <Files>
+            <File>
+              <FileName>pcf8563.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HardWare\pcf8563\pcf8563.c</FilePath>
+            </File>
+            <File>
+              <FileName>si7020_iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HardWare\si7020\si7020_iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>bh1750.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HardWare\bh1750\bh1750.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -46,6 +46,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "hal_dev_ctrl.h"
+#include "pcf8563/pcf8563.h"
+#include "si7020/si7020_iic.h"
+#include "bh1750/bh1750.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -152,6 +155,11 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+    PCF8563_IIC_Init();
+	PCF8563_WriteTime();
+	SI7020_IIC_Init();
+	BH1750_IIC_Init();
+	singleWriteBH1750(0x01);
 	printf ("STM32F103C8T6 Init Finshed!\r\n");
   /* USER CODE END 2 */
 

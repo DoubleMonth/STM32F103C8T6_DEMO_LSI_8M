@@ -28,3 +28,6 @@ stm32f103c8t6_demo\hal_dev_ctrl.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx
 stm32f103c8t6_demo\hal_dev_ctrl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 stm32f103c8t6_demo\hal_dev_ctrl.o: ../Inc/usart.h
 stm32f103c8t6_demo\hal_dev_ctrl.o: ../Inc/main.h
+stm32f103c8t6_demo\hal_dev_ctrl.o: ..\HardWare\pcf8563/pcf8563.h
+stm32f103c8t6_demo\hal_dev_ctrl.o: ..\HardWare\si7020/si7020_iic.h
+stm32f103c8t6_demo\hal_dev_ctrl.o: ..\HardWare\bh1750/bh1750.h

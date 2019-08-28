@@ -20,6 +20,9 @@
 "stm32f103c8t6_demo\stm32f1xx_hal_flash_ex.o"
 "stm32f103c8t6_demo\system_stm32f1xx.o"
 "stm32f103c8t6_demo\hal_dev_ctrl.o"
+"stm32f103c8t6_demo\pcf8563.o"
+"stm32f103c8t6_demo\si7020_iic.o"
+"stm32f103c8t6_demo\bh1750.o"
 --library_type=microlib --strict --scatter "STM32F103C8T6_DEMO\STM32F103C8T6_DEMO.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

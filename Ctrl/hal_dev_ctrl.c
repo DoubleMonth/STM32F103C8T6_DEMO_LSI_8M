@@ -3,10 +3,16 @@
 #include "stdio.h"
 #include "stm32f1xx_hal.h"
 #include "usart.h"
+#include "pcf8563/pcf8563.h"
+#include "si7020/si7020_iic.h"
+#include "bh1750/bh1750.h"
 
 volatile uint32_t deltms = 0;//任务切换计数用
 volatile uint32_t task_monitor;
-
+uint8_t time_buffer1[8];
+uint8_t time_buffer[8];
+double si7020_temperature;
+double si7020_humidity;
 
 static void sys_tick(void *args)
 {
@@ -40,16 +46,29 @@ static void task_20ms(void *args)
 
 static void task_100ms(void *args)
 {
-//		sys_counter++;
-//	if(sys_counter>10)
-//		{
-//			sys_counter=0;
-//			printf ("task_100ms test!\r\n");
-//		}
+		
 }
 static void task_sec(void *args)
 {
-	printf ("task_100ms test!\r\n");
+	static uint8_t i;
+	i++;
+	PCF8563_ReadTime(time_buffer1);
+	printf("%d%d-%d%d-%d%d  %d%d:%d%d:%d%d \r\n",time_buffer[1]/10,time_buffer[1]%10,time_buffer[2]/10,time_buffer[2]%10,time_buffer[3]/10,time_buffer[3]%10,time_buffer[4]/10,time_buffer[4]%10,time_buffer[5]/10,time_buffer[5]%10,time_buffer[6]/10,time_buffer[6]%10);
+	si7020Measure( &si7020_temperature, &si7020_humidity);
+	printf("temperature = %d\r\n",((int)(si7020_temperature*10)));
+	if(i==1)
+	{
+		singleWriteBH1750(0x01);
+		singleWriteBH1750(0x10);
+	}
+	else if(i==2)
+	{
+		multipleReadBH1750();
+		i=0;
+	}
+	
+	  
+	
 }
 
 struct task tasks[] =
